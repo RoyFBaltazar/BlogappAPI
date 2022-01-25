@@ -30,11 +30,11 @@ To run this project, you will need to add the following environment variables to
 
   npm init -y
   npm i
-    - bcrypt
-    - dotenv
-    - express
-    - helmet
-    - jsonwebtoken
-    - mongoose
-    - morgan
+    -bcrypt
+    -dotenv
+    -express
+    -helmet
+    -jsonwebtoken
+    -mongoose
+    -morgan
   
