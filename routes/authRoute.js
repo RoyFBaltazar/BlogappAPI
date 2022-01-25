@@ -20,7 +20,8 @@ userRouter.post('/register', async (req, res)=>{
 
     User.create(user, (err, newUser)=>{
         if(err){
-            res.status(404).json({message: err.message})
+            console.log(err)
+            res.status(400).json({message: "username is taken"})
         }
         res.status(200).json({user:newUser})
     })
