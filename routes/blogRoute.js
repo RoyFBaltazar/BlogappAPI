@@ -67,7 +67,7 @@ let username = req.params.username
 })
 
 blogRoute.put('/id/:id', verifyToken, (req ,res)=>{
-    let id = Number(req.params.id)
+    let id = req.params.id
     let updatedBlog = req.body
 
     Blog.findByIdAndUpdate(id, updatedBlog, (error, changedBlog)=>{
@@ -78,7 +78,7 @@ blogRoute.put('/id/:id', verifyToken, (req ,res)=>{
     })
 })
 blogRoute.get('/id/:id',(req, res)=>{
-    let id = Number(req.params.id)
+    let id = req.params.id
     
         Blog.findById(id, (error, result)=>{
             if(error){

@@ -45,29 +45,29 @@ To run this project, you will need to add the following environment variables to
     - Endpoints, Parameters, Schema
 server
 -app.get('/')
+
 Auth('/auth')
 
--userRouter.post('/register', async (req, res)=>{
--userRouter.post('/login', (req,res)=>{
--userRouter.get('/', verifyToken, (req, res)=>{
+- userRouter.post('/register'
+- userRouter.post('/login', 
+- userRouter.get('/',
 
 Blog('/blog')
 
--blogRoute.get('/', (req,res)=>{
--blogRoute.post('/username/:username', verifyToken, (req, res)=>{ blogRoute.get('/username/:username', verifyToken,(req, res)=>{
--blogRoute.put('/id/:id', verifyToken, (req ,res)=>{
--blogRoute.get('/id/:id',(req, res)=>{
-
+- blogRoute.get('/', 
+- blogRoute.post('/username/:username', verifyToken
+- blogRoute.put('/id/:id', verifyToken,
+- blogRoute.get('/id/:id'
 
 ## Schemas
 
 Auth Route Schema:
 {
-   username:{type: String, required: true},
-    password:{type: String, required: true},
-     email:{type: String, required: true},
-     birthday: {type: Number, required: true},
-     age: {type: Number}
+   username: type: String, required: true,
+    password:type: String, required: true,
+     email:type: String, required: true},
+     birthday: type: Number, required: true,
+     age: type: Number
 
 }
 
