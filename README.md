@@ -1,6 +1,6 @@
 # BlogappAPI
 
-
+<pre>
 
 ## Tech Stack
 **Server**: Node, Express
@@ -37,4 +37,4 @@ To run this project, you will need to add the following environment variables to
     - jsonwebtoken
     - mongoose
     - morgan
-  
+  </pre>
