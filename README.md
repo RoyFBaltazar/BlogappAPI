@@ -64,21 +64,21 @@ Blog('/blog')
 Auth Route Schema:
 {
 
-    - username: type: String, required: true,
-    - password:type: String, required: true,
-    - email:type: String, required: true},
-    - birthday: type: Number, required: true,
-    - age: type: Number
+ - username: type: String, required: true,
+ - password:type: String, required: true,
+ - email:type: String, required: true},
+ - birthday: type: Number, required: true,
+ - age: type: Number
 
 }
 
 Blog Route Schema: 
 {
 
- - username:{type: String, require: true},
- - created_by:{type: String, required: true},
- - created_at: {type: String, required: true},
- - blog_title: {type: String, required: true},
- - blog_content: {type: String, required: true},
- - private: {type: Boolean}
+ - username: type: String, require: true
+ - created_by:type: String, required: true,
+ - created_at: type: String, required: true,
+ - blog_title: type: String, required: true,
+ - blog_content: type: String, required: true,
+ - private: type: Boolean
 }

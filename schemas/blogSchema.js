@@ -11,10 +11,10 @@ const blogSchema = new mongoose.Schema({
 
  username:{type: String, require: true},
  created_by:{type: String, required: true},
- created_at: {type: String, required: true},
+ created_at: {type: String, required: true, default: Date.now},
  blog_title: {type: String, required: true},
  blog_content: {type: String, required: true},
-  private: {type: Boolean}
+  private: {type: Boolean, default: false}
 })
 
 const blogModel = mongoose.model('Blog', blogSchema)
