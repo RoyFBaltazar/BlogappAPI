@@ -1,6 +1,6 @@
 # BlogappAPI
 
-<pre>
+
 
 ## Tech Stack
 **Server**: Node, Express
@@ -29,7 +29,7 @@ To run this project, you will need to add the following environment variables to
 ### Install dependencies
 
   npm init -y
-  npm i:
+  npm i
     - bcrypt
     - dotenv
     - express
@@ -37,4 +37,4 @@ To run this project, you will need to add the following environment variables to
     - jsonwebtoken
     - mongoose
     - morgan
-  </pre>
+  
