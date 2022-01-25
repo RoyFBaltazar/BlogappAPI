@@ -90,7 +90,7 @@ blogRoute.get('/id/:id',(req, res)=>{
             res.status(200).json({data: result})
         })
     })
-blogRoute.delete('/id/:id', (req, res)=>{
+blogRoute.delete('/id/:id', verifyToken, (req, res)=>{
     let id = req.params.id
     
     Blog.findByIdAndDelete(id, (error, returned)=>{
