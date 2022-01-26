@@ -1,7 +1,6 @@
 # BlogappAPI
-A blog API that allows user to register with Authorization Schema. User recieves a Token at the header, with the token the user can acess Public blogs and create a blog with a username at the endpoint. User can also find blog and can adjust/delete blog with id.  
-The API protects API with a hashed password. Usernames/Emails must also be unique during registration process 
-
+A blog API that allows user to register with Authorization Schema. User receives a Token at the header, with the token the user can access Public blogs and create a blog with a username at the endpoint. User can also find blog and can adjust/delete blog with id.  
+The API protects API with a hashed password. Usernames/Emails must also be unique during the registration process.
 
 ## Tech Stack
 **Server**: Node, Express
@@ -47,26 +46,29 @@ To run this project, you will need to add the following environment variables to
 server
 -app.get('/') returns message "API up"
 
-Auth('/auth') creates Users and Login 
+### Auth('/auth') creates Users and Login 
 
-- userRouter.post('/register')
+- userRouter.post('/register'):
 Register Users, AuthSchema is used. password is hashed
-- userRouter.post('/login'}
+- userRouter.post('/login'):
 Login with username and password only. Token is sent to header for further acess  
-- userRouter.get('/')
+- userRouter.get('/'):
  base endpoint Finds all users. Protected with token sent to header 
 No parameters
-Blog('/blog')
 
-- blogRoute.get('/')
+
+### Blog('/blog')
+
+
+- blogRoute.get('/'):
 all Public blogs are included, must be logged in and have a token 
-- blogRoute.post('/username/:username')
+- blogRoute.post('/username/:username'):
 Creates Blog with blogSchema, username parameter(String) name is needed to post blog.
-- blogRoute.put('/id/:id')
+- blogRoute.put('/id/:id'):
 Updates blog with id, parameter(String) id is needed to update blog
-- blogRoute.get('/id/:id')
+- blogRoute.get('/id/:id'):
 Returns blog associcated to id, parameter(String) id is required to find blog. onlyprivate blogs appear. 
-- blogRoute.delete('/id/:id)
+- blogRoute.delete('/id/:id):
 Deletes blog associated with id, need a token for Authorization and parameter(string) id is required to delete blog 
 
 ## Schemas
@@ -92,3 +94,6 @@ Blog Route Schema:
  - blog_content: type: String, required: true,
  - private: type: Boolean, default: false
 }
+## Upcoming Features
+- documentation with Swagger
+- more routes
