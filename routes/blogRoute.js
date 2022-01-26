@@ -80,7 +80,7 @@ blogRoute.put('/id/:id', verifyToken, (req ,res)=>{
 blogRoute.get('/id/:id',(req, res)=>{
     let id = req.params.id
     
-        Blog.findById(id,{"private":false }, (error, result)=>{
+        Blog.findById(id, {"private": false }, (error, result)=>{
             if(error){
                 res.status(404).json({message: error.message})
             }

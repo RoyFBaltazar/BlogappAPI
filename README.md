@@ -1,5 +1,6 @@
 # BlogappAPI
-
+A blog API that allows user to register with Authorization Schema. User recieves a Token at the header, with the token the user can acess Public blogs and create a blog with a username at the endpoint. User can also find blog and can adjust/delete blog with id.  
+The API protects API with a hashed password. Usernames/Emails must also be unique during registration process 
 
 
 ## Tech Stack
@@ -64,7 +65,7 @@ Creates Blog with blogSchema, username parameter(String) name is needed to post 
 - blogRoute.put('/id/:id')
 Updates blog with id, parameter(String) id is needed to update blog
 - blogRoute.get('/id/:id')
-Returns blog associcated to id, parameter(String) id is required to find blog
+Returns blog associcated to id, parameter(String) id is required to find blog. onlyprivate blogs appear. 
 - blogRoute.delete('/id/:id)
 Deletes blog associated with id, need a token for Authorization and parameter(string) id is required to delete blog 
 
