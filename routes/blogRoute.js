@@ -55,7 +55,7 @@ Blog.create(newblog, (error, updatedBlog)=>{
 blogRoute.get('/username/:username', verifyToken,(req, res)=>{
 let username = req.params.username
 
-    Blog.findOne({username: username}, (error, result)=>{
+    Blog.find({username: username}, (error, result)=>{
         if(error){
             res.status(404).json({message: error.message})
         }
@@ -80,11 +80,11 @@ blogRoute.put('/id/:id', verifyToken, (req ,res)=>{
 blogRoute.get('/id/:id',(req, res)=>{
     let id = req.params.id
     
-        Blog.findById(id, (error, result)=>{
+        Blog.findById(id,{"private":false }, (error, result)=>{
             if(error){
                 res.status(404).json({message: error.message})
             }
-            if(result === null || result === undefined || result === []){
+            if(result === null || result === undefined ){
                 res.status(404).json({message: "NOT FOUND"})
             }
             res.status(200).json({data: result})
