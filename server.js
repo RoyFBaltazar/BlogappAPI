@@ -8,6 +8,7 @@ const mongoConnect = require('./config')
 const authRoute = require('./routes/authRoute')
 const blogRoute = require('./routes/blogRoute')
 
+
 dotenv.config()
 
 const app = express()
@@ -18,6 +19,7 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use('/auth', authRoute)
 app.use('/blog', blogRoute)
+
 
 app.get('/', (req,res)=>{
     res.status(200).json({message: "Api up"})
