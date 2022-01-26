@@ -5,7 +5,7 @@
 ## Tech Stack
 **Server**: Node, Express
 
-**Database**: Mongo, AWS
+**Database**: Mongo
 
 **Tools**: Mongo
 

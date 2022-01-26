@@ -17,7 +17,7 @@ const jwt = require('jsonwebtoken')
 const User = require('../schemas/userSchema')
  const privateAcess = require('../middleware/roles')
 
-blogRoute.get('/', (req,res)=>{
+blogRoute.get('/',privateAcess, (req,res)=>{
     Blog.find({private: false }, (error, result)=>{
         if(error){
             res.status(404).json({message: error.message})
@@ -42,7 +42,7 @@ User.findOne({username: username}, (error, result)=>{
     if(error){
         res.status(400).json({message: error.message})
     }
-    if(result === null || result === undefined){
+    if(result === null || result === undefined ||result === username ){
         res.status(404).json({message: "user not found"})
     }})
 Blog.create(newblog, (error, updatedBlog)=>{
