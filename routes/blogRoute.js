@@ -16,8 +16,12 @@ const verifyToken = require('../middleware/jwt')
 const jwt = require('jsonwebtoken')
 const User = require('../schemas/userSchema')
  const privateAcess = require('../middleware/roles')
+ const loginBlog = require('../middleware/roles')
 
-blogRoute.get('/',privateAcess, (req,res)=>{
+blogRoute.get('/', loginBlog, (req,res)=>{
+    let username = req.body
+    let password = req.body
+
     Blog.find({private: false }, (error, result)=>{
         if(error){
             res.status(404).json({message: error.message})
@@ -29,8 +33,9 @@ blogRoute.get('/',privateAcess, (req,res)=>{
     })
 })
 
-blogRoute.post('/username/:username', verifyToken, (req, res)=>{
+blogRoute.post('/username/:username', loginBlog, verifyToken, (req, res)=>{
   let username = req.params.username
+  let password = req.body
   let newblog = req.body
 
     if(!username){
@@ -74,13 +79,14 @@ blogRoute.put('/id/:id', verifyToken, (req ,res)=>{
         if(error){
             res.status(404).json({error: error.message})
         }
+        console.log(changedBlog)
         res.status(201).json({Blog: changedBlog})
     })
 })
 blogRoute.get('/id/:id',(req, res)=>{
     let id = req.params.id
     
-        Blog.findById(id, {"private": false }, (error, result)=>{
+        Blog.findById(id, (error, result)=>{
             if(error){
                 res.status(404).json({message: error.message})
             }
