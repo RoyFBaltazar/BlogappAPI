@@ -74,7 +74,7 @@ Deletes blog associated with id, need a token for Authorization and parameter(st
 ## Schemas
 
 Auth Route Schema:
-{
+
 
  - username: type: String, required: true,
  - password:type: String, required: true,
@@ -82,10 +82,10 @@ Auth Route Schema:
  - birthday: type: Number, required: true,
  - age: type: Number
 
-}
+
 
 Blog Route Schema: 
-{
+
 
  - username: type: String, require: true
  - created_by:type: String, required: true,
@@ -93,7 +93,7 @@ Blog Route Schema:
  - blog_title: type: String, required: true,
  - blog_content: type: String, required: true,
  - private: type: Boolean, default: false
-}
+
 ## Upcoming Features
 - documentation with Swagger
 - more routes
