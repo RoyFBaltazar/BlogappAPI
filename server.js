@@ -13,7 +13,7 @@ const blogRoute = require('./routes/blogRoute')
 dotenv.config()
 
 const app = express()
-const port = 400 || process.env.PORT
+const port = process.env.PORT || 400
 
 
 // app.use('/swagger', swagger.serve, swagger.setup(swagger))
