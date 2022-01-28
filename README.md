@@ -1,7 +1,7 @@
 # BlogappAPI
 A blog API that allows user to register with Authorization Schema. User receives a Token at the header, with the token the user can access Public blogs and create a blog with a username at the endpoint. User can also find blog and can adjust/delete blog with id.  
 The API protects API with a hashed password. Usernames/Emails must also be unique during the registration process.
-
+site: https://roys-blog-app.herokuapp.com/
 ## Tech Stack
 **Server**: Node, Express
 
@@ -93,6 +93,14 @@ Blog Route Schema:
  - blog_title: type: String, required: true,
  - blog_content: type: String, required: true,
  - private: type: Boolean, default: false
+
+ ## Middleware
+verifyToken:
+gets token from header and matches token sent.
+
+loginBlog:
+uses login function to verify user is logged to aceess and post blogs.
+userame and password required, if passwords or username do not match 400 error will be sent 
 
 ## Upcoming Features
 - documentation with Swagger
