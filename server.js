@@ -3,8 +3,9 @@ const helmet = require('helmet')
 const bodyParser = require('body-parser')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
-
+// const swagger = require('./docs/swagger')
 const mongoConnect = require('./config')
+// const swaggerUI = require('swagger-ui-express')
 const authRoute = require('./routes/authRoute')
 const blogRoute = require('./routes/blogRoute')
 
@@ -13,6 +14,9 @@ dotenv.config()
 
 const app = express()
 const port = 400 || process.env.PORT
+
+
+// app.use('/swagger', swagger.serve, swagger.setup(swagger))
 
 app.use(helmet())
 app.use(bodyParser.json())

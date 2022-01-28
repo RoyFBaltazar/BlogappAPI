@@ -57,7 +57,7 @@ Blog.create(newblog, (error, updatedBlog)=>{
     res.status(201).json({message: updatedBlog})
 })
 })
-blogRoute.get('/username/:username', verifyToken,(req, res)=>{
+blogRoute.get('/username/:username',loginBlog, verifyToken,(req, res)=>{
 let username = req.params.username
 
     Blog.find({username: username}, (error, result)=>{
